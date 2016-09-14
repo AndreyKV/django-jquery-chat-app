@@ -10,13 +10,15 @@ $('#chat-form').on('submit', function(event){
         },
 
         success: function(json) {
-            $('#msg-text').val("");
-            $('#msg-list').append(
-                '<li><p><span class="username">' + json["sender"] +
-                '</span><span class="message-date">' + json["date"] +
-                '</span></p><p>' + json["msg"] + '</p></li>');
-            var chatlist = document.getElementById('msg-list-div');
-            chatlist.scrollTop = chatlist.scrollHeight;
+            $('#msg-text').val('');
+            if (json["msg"] != '') {
+                $('#msg-list').append(
+                    '<li><p><span class="username">' + json["sender"] +
+                    '</span><span class="message-date">' + json["date"] +
+                    '</span></p><p>' + json["msg"] + '</p></li>');
+                var chatlist = document.getElementById('msg-list-div');
+                chatlist.scrollTop = chatlist.scrollHeight;
+            }
         }
     });
 });
@@ -56,15 +58,15 @@ $(function(){
 });
 
 $(document).ready(function() {
-     $('#send').attr('disabled','disabled');
-     $('#msg-text').keyup(function() {
+    $('#send').attr('disabled', 'disabled');
+    $('#msg-text').keyup(function() {
         if($(this).val() != '') {
-           $('#send').removeAttr('disabled');
+            $('#send').removeAttr('disabled');
         }
         else {
-        $('#send').attr('disabled','disabled');
+            $('#send').attr('disabled', 'disabled');
         }
-     });
+    });
 });
 
 $(function() {

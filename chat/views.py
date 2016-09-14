@@ -58,7 +58,7 @@ def send_message(request):
 			msg = request.POST.get('msg_text')
 			partner = User.objects.get(pk=request.GET['pk'])
 			dialogs = Dialog.objects.filter(participants=request.user)
-			
+
 			try:
 				dialog = dialogs.get(participants=partner)
 			except ObjectDoesNotExist:
@@ -66,11 +66,12 @@ def send_message(request):
 				dialog.participants.add(request.user, partner)
 
 			message = Message(dialog=dialog, text=msg, sender=request.user)
-			message.save()
+			if msg != '':
+				message.save()
 
 			data = {'msg': msg, 'date': message.date, 'sender': request.user.username}
 			return JsonResponse(data)
-	
+
 	return HttpResponse('Request must be POST.')
 
 def messages(request):
