@@ -1,0 +1,8 @@
+{% for user in users %}
+	<li class="search-result-li" onclick="location.href='/chat/?pk={{ user.id }}'">
+		<span class="username">{{ user.username }}</span>
+		<span class="glyphicon glyphicon-plus plus pull-right" title="Создать беседу"></span>
+	</li>
+{% empty %}
+	<li class="empty">Ваш запрос не дал результатов</li>
+{% endfor %}

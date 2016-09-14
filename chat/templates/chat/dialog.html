@@ -1,0 +1,49 @@
+{% extends 'chat/base.html' %}
+
+{% block title %}
+	Чат
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="shell dialog-container">
+				<div class="dialogs-heading">
+					<a href="/chat/"><span class="glyphicon glyphicon-chevron-left back"></span></a>
+					{{ partner.username }}
+				</div>
+
+				<div id="msg-list-div" class="messages">
+					<ul id="msg-list" class="message">
+						{% for msg in messages %}
+							<li>
+    							<p>
+									<span class="username">{{ msg.sender }}</span>
+									<span class="message-date">{{ msg.date }}</span>
+								</p>	
+								<p>
+									{{ msg.text | linebreaksbr }}
+								</p>
+    						</li>
+						{% empty %}
+   							 <div class="message-empty">
+   							 	Здесь будут отображаться ваши сообщения
+   							 </div>
+						{% endfor %}
+
+						<script>
+							var chatlist = document.getElementById('msg-list-div');
+							chatlist.scrollTop = chatlist.scrollHeight;
+						</script>
+					</ul>
+				</div>
+
+				<form id="chat-form" class="chat-form" method="POST">
+					{% csrf_token %}
+					<textarea id="msg-text" class="form-control" placeholder="Текст сообщения" name="msg-text"></textarea>
+					<input id="send" class="btn btn-primary pull-right" type="submit" value="Отправить">
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

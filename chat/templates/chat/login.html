@@ -1,0 +1,32 @@
+{% extends 'chat/base.html' %}
+
+{% block title %}
+	Вход | Чат
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="shell shell-login">
+				<div class="shell-heading">
+					<h3>Вход</h3>
+				</div>
+
+				{% if login_error %}
+					<div class="alert alert-danger">
+						<p><strong>Не удается войти</strong>.</p>
+						<p>Неверный <strong>логин</strong> или <strong>пароль</strong>. Пожалуйста, попробуйте снова.</p>
+					</div>
+				{% endif %}
+				
+				<form method="POST" class="form-login" role="form">
+					{% csrf_token %}
+					<input class="form-control" placeholder="Логин" type="text" name="username">
+					<input class="form-control" placeholder="Пароль" type="password" name="password">
+					<input class="btn btn-primary" type="submit" value="Войти">
+					<input class="btn btn-success pull-right" type="button" onclick="location.href='/register/'" value="Регистрация">
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

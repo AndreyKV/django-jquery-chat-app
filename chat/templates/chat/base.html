@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+{% load staticfiles %}
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+
+	<body>
+		<div class="chat-navbar" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse">
+					{% if user.is_authenticated %}
+						<div class="navbar-logout">
+							{{ user.username }} |
+							<a href="/logout/">Выйти</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+		{% block content %}
+		{% endblock %}
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="{% static 'js/chat.js' %}"></script>
+
+	</body>
+</html>

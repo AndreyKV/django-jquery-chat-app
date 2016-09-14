@@ -1,0 +1,58 @@
+{% extends 'chat/base.html' %}
+
+{% block title %}
+	Чат
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="shell chat-container">
+				<div class="dialogs">
+					<div class="dialogs-heading">
+						Собеседники
+					</div>
+
+					<div id="dialog-list-div">
+						<ul id="dialog-list" class="dialog-list">
+							{% for dialog in dialogs %}
+								<li class="dialog" onclick="location.href='/chat/?pk={{ dialog.partner.pk }}'">
+									<p>
+										<span class="username">{{ dialog.partner }}</span>
+										<span class="message-date">{{ dialog.message.date }}</span>
+									</p>	
+									<p class="message-text">
+										{% if dialog.message.sender = user %}
+											<span class="me">Вы:</span>
+										{% endif %}
+										{{ dialog.message.text }}
+									</p>
+								</li>
+							{% empty %}
+								<div class="empty">
+									Здесь будут отображаться ваши диалоги
+								</div>
+							{% endfor %}
+
+							<script>
+								var chatlist = document.getElementById('msg-list-div');
+								chatlist.scrollTop = chatlist.scrollHeight;
+							</script>
+						</ul>
+					</div>
+				</div>
+
+				<div class="search-user">
+					<div class="search">
+						{% csrf_token %}
+						<span class="glyphicon glyphicon-search"></span>
+						<input id="search" type="search" placeholder="Поиск собеседников" name="search_text" value="">
+					</div>
+
+					<ul id="search-result" class="search-result">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

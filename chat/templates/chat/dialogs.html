@@ -1,0 +1,18 @@
+{% for dialog in dialogs %}
+	<li class="dialog" onclick="location.href='/chat/?pk={{ dialog.partner.pk }}'">
+		<p>
+			<span class="username">{{ dialog.partner }}</span>
+			<span class="message-date">{{ dialog.message.date }}</span>
+		</p>	
+		<p class="message-text">
+			{% if dialog.message.sender = user %}
+				<span class="me">Вы:</span>
+			{% endif %}
+			{{ dialog.message.text }}
+		</p>
+	</li>
+{% empty %}
+	<div class="empty">
+		Здесь будут отображаться ваши диалоги
+	</div>
+{% endfor %}

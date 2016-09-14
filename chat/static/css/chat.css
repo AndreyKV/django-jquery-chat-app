@@ -1,0 +1,275 @@
+body {
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #eee;
+}
+
+.chat-navbar {
+  height: 42px;
+  margin-bottom: 30px;
+  padding-right: 80px;
+  background-color: #496B91;
+}
+
+.navbar-logout {
+  color: #fff;
+  float: right;
+  padding: 10px;
+  padding-right: 5%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar-logout a {
+  color: #fff;
+}
+
+.shell {
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.shell-login {
+  width: 600px;
+  padding: 40px;
+  padding-top: 20px;
+}
+
+.shell-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px; 
+  border-bottom: 1px solid #ddd;
+}
+
+.shell-login .alert p {
+  color: #000000;
+}
+
+.form-login {
+  margin: 0 auto;
+  max-width: 340px;
+  padding: 5px 40px 10px 40px;
+}
+
+.form-login .form-control {
+  padding: 10px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-login .form-control:focus {
+  z-index: 2;
+}
+
+.form-login input[type="text"] {
+  margin-bottom: 15px;
+}
+
+.form-login input[type="password"] {
+  margin-bottom: 15px;    
+}
+
+.form-login .btn {
+  padding: 9px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.form-register {
+  max-width: 310px;
+  margin: 0 auto;
+}
+
+.form-register input {
+  width: 100%;
+  height: 34px;
+  display: block;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.form-register input:focus {
+  border: 1px solid #66afe9;
+}
+
+.chat-container {
+  width: 860px;
+  height: 84vh;
+  position: relative;
+}
+
+.dialogs {
+  width: 70%;
+  height: 100%;
+}
+
+.empty {
+  color: #aaa;
+  text-align: center;
+  line-height: 80vh;
+}
+
+.message-empty {
+  color: #aaa;
+  text-align: center;
+  line-height: 40vh;
+}
+
+.dialogs-heading {
+  height: 41px;
+  padding: 12px;
+  padding-left: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dialog-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.dialog {
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dialog:hover {
+  cursor: pointer;
+  background-color: #eef;
+}
+
+.remove {
+  color: #aaa;
+  padding-left: 10px;
+  padding-right: 0; 
+}
+
+.username {
+  font-weight: bold;
+  color: orange;
+}
+
+.message-date {
+  color: #aaa;
+  float: right;
+  font-size: 13px;
+}
+
+.message-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.me {
+  color: #aaa;
+}
+
+.search {
+  border-bottom: 1px solid #ddd;
+}
+
+.search span {
+  display: inline;
+  width: 15%;
+  color: #aaa;
+  padding-left: 15px;
+}
+
+.search input {
+  display: inline;
+  width: 85%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  padding-left: 10px;
+  background-color: #eee; 
+}
+
+.search-user {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: auto;
+  background: #eef;
+  border-left: 1px solid #DDD;
+}
+
+.search-result {
+  padding: 0;
+  list-style-type: none;
+}
+
+.search-result-li {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #eef;
+}
+
+.search-result-li:hover {
+  cursor: pointer;
+}
+
+.plus {
+  color: #aaa;
+  padding-top: 2px;
+}
+
+.dialog-container {
+  width: 600px;
+  height: 560px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 10px;
+ }
+
+.back {
+  color: #aaa;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.messages {
+  width: 100%;
+  height: 70%;
+  padding: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+
+.message {
+  padding: 0;
+  list-style-type: none;
+}
+
+.chat-form {
+  width: 100%;
+  height: 30%;
+  padding: 10px;
+}
+
+.chat-form textarea {
+  height: 70px;
+  resize: none;
+}
+
+.chat-form .btn {
+  margin-top: 5px; 
+}

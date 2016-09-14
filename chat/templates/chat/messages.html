@@ -1,0 +1,15 @@
+{% for msg in messages %}
+	<li>
+    	<p>
+			<span class="username">{{ msg.sender }}</span>
+			<span class="message-date">{{ msg.date }}</span>
+		</p>
+		<p>
+			{{ msg.text | linebreaksbr }}
+		</p>
+    </li>
+	{% empty %}
+		<div class="message-empty">
+			Здесь будут отображаться ваши сообщения
+		</div>
+{% endfor %}
